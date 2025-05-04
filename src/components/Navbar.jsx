@@ -3,19 +3,17 @@ import { Link, NavLink } from "react-router";
 import { AuthContex } from "../contex/AuthContex";
 
 const Navbar = () => {
-  const { user,userSignOut } = use(AuthContex);
- 
+  const { user, userSignOut } = use(AuthContex);
 
-  const handleSignOut=()=>{
+  const handleSignOut = () => {
     userSignOut()
-    .then(result=>{
-        console.log('signout success',result)
-    })
-    .then(error=>{
-        console.log("signout fail",error)
-    })
-
-  }
+      .then((result) => {
+        console.log("signout success", result);
+      })
+      .then((error) => {
+        console.log("signout fail", error);
+      });
+  };
 
   const links = (
     <>
@@ -28,6 +26,14 @@ const Navbar = () => {
       <li>
         <NavLink to="/registetion"> Registetion </NavLink>
       </li>
+
+      {user && (
+        <>
+          <li>
+            <NavLink to="/orders"> Orders </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (

@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Login from "../auth/Login";
 import Registration from "../auth/registetion";
 import Home from "../layouts/Home";
+import Orders from "../components/Orders";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 
 export const router=createBrowserRouter([
@@ -23,6 +25,12 @@ export const router=createBrowserRouter([
                 path:"registetion",
                 Component:Registration
             },
+
+            {
+                path:"orders",
+                // Component:Orders
+                element:<PrivateRoutes><Orders></Orders></PrivateRoutes>
+            }
         ]
     },
     
