@@ -1,8 +1,10 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContex } from "../contex/AuthContex";
 
 const Login = () => {
+
+    const navigate=useNavigate()
     const {signInUser}=use(AuthContex);
   const handleLoginForm = (e) => {
 
@@ -15,6 +17,8 @@ const Login = () => {
     signInUser(email,password)
     .then(result =>{
         console.log(result)
+        navigate("/")
+
     })
     .then(error =>{
         console.log(error)
