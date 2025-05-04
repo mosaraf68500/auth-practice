@@ -6,6 +6,7 @@ import Registration from "../auth/registetion";
 import Home from "../layouts/Home";
 import Orders from "../components/Orders";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import Loading from "../Loading/Loading";
 
 
 export const router=createBrowserRouter([
@@ -24,6 +25,11 @@ export const router=createBrowserRouter([
             {
                 path:"registetion",
                 Component:Registration
+            },
+
+            {
+                path:"loading",
+                Component:Loading
             },
 
             {
